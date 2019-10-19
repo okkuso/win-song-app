@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { Song } from './songs';
 
 @Injectable({
   providedIn: 'root'
@@ -10,8 +12,8 @@ export class WinSongService {
 
   constructor( private http: HttpClient ) { }
 
-  getMediaUrl() {
-    return this.http.get(this._url);
+  getMediaUrl(): Observable<Song[]> {
+    return this.http.get<Song[]>(this._url);
   }
 
   getMediaTitle() {

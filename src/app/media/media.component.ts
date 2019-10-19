@@ -13,7 +13,7 @@ export class MediaComponent implements OnInit {
   constructor( private _winSongService: WinSongService) { }
 
   ngOnInit() {
-    this._winSongService.getMediaUrl().subscribe(data => this.mediaUrl = data[0].id);
+    this._winSongService.getMediaUrl().subscribe(data => this.mediaUrl = data[0].title);
   }
 
 }
