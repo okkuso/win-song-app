@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { WinSongService } from '../win-song.service';
 
 @Component({
   selector: 'app-media',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MediaComponent implements OnInit {
 
-  constructor() { }
+  public mediaUrl: string;
+
+  constructor( private _winSongService: WinSongService) { }
 
   ngOnInit() {
+    this._winSongService.getMediaUrl().subscribe(data => this.mediaUrl = data[0].id);
   }
 
 }
