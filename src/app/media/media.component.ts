@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { WinSongService } from '../win-song.service';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-media',
@@ -8,12 +9,16 @@ import { WinSongService } from '../win-song.service';
 })
 export class MediaComponent implements OnInit {
 
-  public mediaUrl: string;
+  public mediaUrl: SafeResourceUrl;
+  public unsafeUrl: string;
 
-  constructor( private _winSongService: WinSongService) { }
+  constructor(
+    private _winSongService: WinSongService,
+    private _domSanitizer: DomSanitizer) { }
 
   ngOnInit() {
-    this._winSongService.getMediaUrl().subscribe(data => this.mediaUrl = data[0].title);
+    this._winSongService.getMediaUrl().subscribe(data =>
+      this.mediaUrl = this._domSanitizer.bypassSecurityTrustResourceUrl(data[0].youtube_param));
   }
 
 }
