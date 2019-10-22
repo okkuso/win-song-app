@@ -8,6 +8,7 @@ import { Song } from './songs';
 })
 export class WinSongService {
 
+  public songList: JSON;
   private _url: string = 'assets/data/songs.json';
 
   constructor( private http: HttpClient ) { }
@@ -18,5 +19,9 @@ export class WinSongService {
 
   getMediaTitle() {
     return 'This is media title, like "Avicii - Wake Me Up"';
+  }
+
+  getSongList(): void {
+    this.http.get(this._url).subscribe(data => this.songList);
   }
 }

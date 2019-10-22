@@ -3,18 +3,18 @@
     "id": "1",
     "title": "Nobody compares to you",
     "artist": "Gryffin",
-    "youtube_param": "https://www.youtube.com/embed/QjihRb2E-YA"
+    "youtube_url": "https://www.youtube.com/embed/QjihRb2E-YA"
   },
   {
     "id": "2",
     "title": "The Days",
     "artist": "Avicii",
-    "youtube_param": "JDglMK9sgIQ"
+    "youtube_url": "https://www.youtube.com/embed/JDglMK9sgIQ"
   },
   {
     "id": "3",
     "title": "Beautiful Now",
     "artist": "Zedd",
-    "youtube_param": "n1a7o44WxNo"
+    "youtube_url": "https://www.youtube.com/embed/n1a7o44WxNo"
   }
 ]
