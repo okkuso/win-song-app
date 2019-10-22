@@ -1,3 +1,3 @@
 <app-media-screen [mediaUrl]="mediaUrl"></app-media-screen>
 <app-media-title [mediaTitle]="mediaTitle"></app-media-title>
-<app-media-next></app-media-next>
+<app-media-next (nextEvent)="setNextSong()"></app-media-next>
