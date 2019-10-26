@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterContentInit, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { WinSongService } from '../win-song.service';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { Song } from '../song';
